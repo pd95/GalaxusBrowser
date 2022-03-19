@@ -47,10 +47,19 @@ struct ProductView: View {
             }
 
             SalesInformationView(salesInformation: product.salesInformation)
+                .padding(.bottom, 1)
 
-            Text("**\(offerPrice)** statt \(basePrice)")
+            VStack(alignment: .leading, spacing: 2) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("\(offerPrice)").font(.headline)
+                    Text("statt \(basePrice)").font(.caption2)
+                    Spacer()
+                    EnergyLabel(efficiency: product.energyEfficiency.energyEfficiencyLabelText)
+                }
 
-            Text("**\(product.brandName)** \(product.name)")
+                Text("**\(product.brandName)** \(product.name)")
+                    .font(.title3)
+            }
 
             StarRatingView(averageRating: product.averageRating, totalRatings: product.totalRatings)
                 .padding(.top, 1)
@@ -61,6 +70,23 @@ struct ProductView: View {
             }
         }
         .padding()
+    }
+
+    struct EnergyLabel: View {
+        let efficiency: String
+
+        var body: some View {
+            Text(efficiency)
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(.vertical, 2)
+                .padding(.trailing, 8)
+                .frame(maxWidth: 48, alignment: .trailing)
+                .background(
+                    Rectangle()
+                        .fill(Color("energyEfficency\(efficiency)"))
+                )
+        }
     }
 
     struct SalesInformationView: View {
