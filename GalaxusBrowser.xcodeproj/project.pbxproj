@@ -14,6 +14,7 @@
 		178D1E9427E5D8B300146401 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D1E9327E5D8B300146401 /* Product.swift */; };
 		178D1E9627E5EADE00146401 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D1E9527E5EADE00146401 /* ProductView.swift */; };
 		178D1E9827E5EB2B00146401 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D1E9727E5EB2B00146401 /* Helper.swift */; };
+		178D1E9A27E5F4CD00146401 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178D1E9927E5F4CD00146401 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		178D1E9327E5D8B300146401 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		178D1E9527E5EADE00146401 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		178D1E9727E5EB2B00146401 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		178D1E9927E5F4CD00146401 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			children = (
 				178D1E8527E5D56100146401 /* GalaxusBrowserApp.swift */,
 				178D1E8727E5D56100146401 /* ContentView.swift */,
+				178D1E9927E5F4CD00146401 /* WebView.swift */,
 				178D1E9727E5EB2B00146401 /* Helper.swift */,
 				178D1E9527E5EADE00146401 /* ProductView.swift */,
 				178D1E9327E5D8B300146401 /* Product.swift */,
@@ -149,6 +152,7 @@
 				178D1E9627E5EADE00146401 /* ProductView.swift in Sources */,
 				178D1E8827E5D56100146401 /* ContentView.swift in Sources */,
 				178D1E9827E5EB2B00146401 /* Helper.swift in Sources */,
+				178D1E9A27E5F4CD00146401 /* WebView.swift in Sources */,
 				178D1E8627E5D56100146401 /* GalaxusBrowserApp.swift in Sources */,
 				178D1E9427E5D8B300146401 /* Product.swift in Sources */,
 			);

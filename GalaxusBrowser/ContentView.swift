@@ -47,9 +47,7 @@ struct LiveShopping: View {
 
 struct BrowseProducts: View {
     var body: some View {
-        NavigationView {
-        }
-        .navigationViewStyle(.stack)
+        WebView(request: URLRequest(url: URL(string: "https://www.galaxus.ch")!))
     }
 }
 
