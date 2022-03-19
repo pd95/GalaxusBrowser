@@ -9,11 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ProductView(product: .example)
-            .border(Color.black)
-            .padding()
+        TabView {
+            LiveShopping()
+                .tabItem {
+                    Label("Tagesangebot", systemImage: "target")
+                }
+
+            BrowseProducts()
+                .tabItem {
+                    Label("Browse", systemImage: "tortoise")
+                }
+        }
     }
 }
+
+struct LiveShopping: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                ProductView(product: .example)
+                    .navigationTitle("Tagesangebot")
+                Spacer()
+            }
+        }
+        .navigationViewStyle(.stack)
+    }
+}
+
+struct BrowseProducts: View {
+    var body: some View {
+        NavigationView {
+        }
+        .navigationViewStyle(.stack)
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
