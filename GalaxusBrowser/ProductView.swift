@@ -55,6 +55,11 @@ struct ProductView: View {
             StarRatingView(averageRating: product.averageRating, totalRatings: product.totalRatings)
                 .padding(.top, 1)
         }
+        .onTapGesture {
+            if let url = URL(string: "https://www.galaxus.ch/de/s14/product/\(product.id)") {
+                UIApplication.shared.open(url)
+            }
+        }
         .padding()
     }
 
