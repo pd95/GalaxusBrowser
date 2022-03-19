@@ -9,26 +9,50 @@ import SwiftUI
 
 struct ProductView: View {
 
-    let product: Product
+    private let productName: String
+    private let brandName: String
 
-    let imageURL: URL
+    private let productTypeName: String
+    private let imageURL: URL
 
-    let basePrice: String
-    let offerPrice: String
+    private let numberOfItems: Int
+    private let numbersRemaining: Int
+
+    private let basePrice: String
+    private let offerPrice: String
+
+    private let energyEfficiency: String
+
+    private let averageRating: Double
+    private let totalRatings: Int
+
+    private let targetURL: URL
 
     init(product: Product) {
-        self.product = product
+        self.productName = product.name
+        self.brandName = product.brandName
+        self.productTypeName = product.productTypeName
         self.imageURL = product.images.first!.url
+
+        self.numberOfItems = product.salesInformation.numberOfItems
+        self.numbersRemaining = product.salesInformation.numberOfItems - product.salesInformation.numberOfItemsSold
 
         let currency = product.offerPrice.currency
 
         self.offerPrice = product.offerPrice.amountIncl.currencyFormatted(currency: currency)
         self.basePrice = product.basePrice.amountIncl.currencyFormatted(currency: currency)
+
+        self.energyEfficiency = product.energyEfficiency.energyEfficiencyLabelText
+
+        self.averageRating = product.averageRating
+        self.totalRatings = product.totalRatings
+
+        self.targetURL = URL(string: "https://www.galaxus.ch/de/s14/product/\(product.id)")!
     }
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(product.productTypeName)
+            Text(productTypeName)
                 .font(.callout)
                 .foregroundColor(Color("linkTextColor"))
 
@@ -46,28 +70,29 @@ struct ProductView: View {
                 #endif
             }
 
-            SalesInformationView(salesInformation: product.salesInformation)
-                .padding(.bottom, 1)
+            SalesInformationView(
+                numberOfItems: numberOfItems,
+                numberRemaining: numbersRemaining
+            )
+            .padding(.bottom, 1)
 
             VStack(alignment: .leading, spacing: 2) {
                 HStack(alignment: .firstTextBaseline) {
                     Text("\(offerPrice)").font(.headline)
                     Text("statt \(basePrice)").font(.caption2)
                     Spacer()
-                    EnergyLabel(efficiency: product.energyEfficiency.energyEfficiencyLabelText)
+                    EnergyLabel(efficiency: energyEfficiency)
                 }
 
-                Text("**\(product.brandName)** \(product.name)")
+                Text("**\(brandName)** \(productName)")
                     .font(.title3)
             }
 
-            StarRatingView(averageRating: product.averageRating, totalRatings: product.totalRatings)
+            StarRatingView(averageRating: averageRating, totalRatings: totalRatings)
                 .padding(.top, 1)
         }
         .onTapGesture {
-            if let url = URL(string: "https://www.galaxus.ch/de/s14/product/\(product.id)") {
-                UIApplication.shared.open(url)
-            }
+            UIApplication.shared.open(targetURL)
         }
         .padding()
     }
@@ -90,16 +115,16 @@ struct ProductView: View {
     }
 
     struct SalesInformationView: View {
-        let salesInformation: Product.SalesInformation
+        let numberOfItems: Int
+        let numberRemaining: Int
 
         var body: some View {
-            let remaining = salesInformation.numberOfItems - salesInformation.numberOfItemsSold
 
             VStack(alignment: .leading) {
-                Text("**noch \(remaining)** von \(salesInformation.numberOfItems) Stück")
+                Text("**noch \(numberRemaining)** von \(numberOfItems) Stück")
                     .font(.caption2)
 
-                ProgressView(value: Double(remaining), total: Double(salesInformation.numberOfItems))
+                ProgressView(value: Double(numberRemaining), total: Double(numberOfItems))
                     .accentColor(Color("amountRemainingBar"))
             }
         }
