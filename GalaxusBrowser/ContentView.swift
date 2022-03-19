@@ -7,18 +7,27 @@
 
 import SwiftUI
 
+enum MainTabs: String {
+    case liveShopping
+    case browseProducts
+}
+
 struct ContentView: View {
+    @AppStorage("selectedTab") var selectedTab: MainTabs = .liveShopping
+
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             LiveShopping()
                 .tabItem {
                     Label("Tagesangebot", systemImage: "target")
                 }
+                .tag(MainTabs.liveShopping)
 
             BrowseProducts()
                 .tabItem {
                     Label("Browse", systemImage: "tortoise")
                 }
+                .tag(MainTabs.browseProducts)
         }
     }
 }
