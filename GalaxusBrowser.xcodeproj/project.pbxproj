@@ -27,6 +27,7 @@
 		178D1E9527E5EADE00146401 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		178D1E9727E5EB2B00146401 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		178D1E9927E5F4CD00146401 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		17D43B7527E617FB0034C359 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +44,7 @@
 		178D1E7927E5D56100146401 = {
 			isa = PBXGroup;
 			children = (
+				17D43B7527E617FB0034C359 /* README.md */,
 				178D1E8427E5D56100146401 /* GalaxusBrowser */,
 				178D1E8327E5D56100146401 /* Products */,
 			);
