@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		178D1E8227E5D56100146401 /* GalaxusBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalaxusBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		178D1E8227E5D56100146401 /* Galaxus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Galaxus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		178D1E8527E5D56100146401 /* GalaxusBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxusBrowserApp.swift; sourceTree = "<group>"; };
 		178D1E8727E5D56100146401 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		178D1E8927E5D56200146401 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		178D1E8327E5D56100146401 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				178D1E8227E5D56100146401 /* GalaxusBrowser.app */,
+				178D1E8227E5D56100146401 /* Galaxus.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			);
 			name = GalaxusBrowser;
 			productName = GalaxusBrowser;
-			productReference = 178D1E8227E5D56100146401 /* GalaxusBrowser.app */;
+			productReference = 178D1E8227E5D56100146401 /* Galaxus.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -297,7 +297,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.GalaxusBrowser;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Galaxus;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,7 +326,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.GalaxusBrowser;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Galaxus;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
